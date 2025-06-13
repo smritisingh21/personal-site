@@ -1,0 +1,23 @@
+
+#socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vw;
+    margin-bottom: 10vh;
+}
+
+.icon {
+    height:2.3vw;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+}   
+
+.icon:hover {
+    transition: all 0.3s ease;
+    transform: translateY(-7px);
+}
+
+
