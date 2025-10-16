@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Socials.module.css';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -30,7 +29,7 @@ function Socials() {
           <a id="contact-icon" href="https://www.linkedin.com/in/smriti-singh-a06685257/">
             <img className={styles.icon} src="./linkedin.png"></img>
           </a>
-          <a id="contact-icon" href ="https://x.com/singh_smri18132">
+          <a id="contact-icon" href ="https://x.com/sillymilllly">
             <img className={styles.icon} src="./Twitter.png"></img>
           </a>
           <a id="contact-icon" href ="https://mail.google.com/mail/u/2/#inbox">

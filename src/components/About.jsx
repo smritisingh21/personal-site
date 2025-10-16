@@ -25,16 +25,15 @@ const About =() => {
 
   gsap.from("#astronaut-img", {
       x: -100,
-      y: 50,
+      y: 100,
       opacity: 0,
       duration: 2,
       transformOrigin: "center",
       rotate: -30,
       scale: 1,
       scrollTrigger: {
-          trigger: "#about-container-bottom",
-          start: "top 60%",
-          end: "top 20%",
+          trigger: "#about-container-top",
+          start: "top 0%",
           ease: "power1.inOut",
       }
   });

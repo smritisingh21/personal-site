@@ -33,7 +33,7 @@ export default function Projects() {
   });
   return (
     <div className="projects-section" id="projects-section">
-      <div className="projects-intro" id="projects-intro">PROJECTS</div>
+      <div className="projects-intro" id="projects-intro">Previous works</div>
     <Projectcard title="COUNTRIES API PROJECT" description="lorem ipsum" link1="https://smriti-coutntries-api.netlify.app/" link2="https://github.com/smritisingh21/countries-api-project" />
     <Projectcard title="FOCUS ON TODAY" description="Description for project 2" link1="https://focus-on-today-project-ss.netlify.app/" link2="https://github.com/smritisingh21/FocusProject"/>
     <Projectcard title="TIC TAC TOE" description="Description for project 3" link1="https://silver-paprenjak-775c2e.netlify.app" link2="https://github.com/user/project3"/>

@@ -55,7 +55,7 @@ const Home = () => {
             {/* <img ref={gsapRef}id="grad-ball2"src="public/earth.png" alt="" /> */}
 
           <div id="hero-text">  
-            <div id="heading">Welcome to the portfolio site of <br/><span className="name">SMRITI SINGH </span>
+            <div id="heading">Welcome to the space of<br/><span className="name">SMRITI SINGH </span>
               <p id='sub-heading'>I make pixel-perfect websites!</p></div>
             {/* <a id="hire-button" href="#hire-me-text">Hire me</a> */}
             <Socials/>

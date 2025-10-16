@@ -28,10 +28,10 @@
 
 
 import React, { useState } from 'react';
-import './ProjectCard.css';
+import './Projectcard.css';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-const ProjectCard = ({ number, title, description, link1, link2 }) => {
+const Projectcard = ({ number, title, description, link1, link2 }) => {
   const [showDescription, setShowDescription] = useState(false);
 
   return (
@@ -69,5 +69,5 @@ const ProjectCard = ({ number, title, description, link1, link2 }) => {
   );
 };
 
-export default ProjectCard;
+export default Projectcard;
 

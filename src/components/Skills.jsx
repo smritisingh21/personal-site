@@ -12,7 +12,7 @@ function Skills (){
         y: 10,
         scrollTrigger: {
             trigger: "#skills-section ",
-            start: "top 60%",
+            start: "top 30%",
             toggleActions: "play none none none",
         }
  })
@@ -23,7 +23,7 @@ function Skills (){
         stagger: 0.1,
         scrollTrigger: {
             trigger: "#skills-container",
-            start: "top 60%",
+            start: "top 90%",
             toggleActions: "play none none none",
         }
     })
@@ -32,6 +32,7 @@ function Skills (){
     <>
     <div className={styles.skillssection} id="skills-section">
          <div className={styles.skillsintro} id="skillsintro">TOOLS AND TECHNOLOGIES</div>
+         <p className={styles.statement}>Apart from the tools mentioned below , I am always open to learn new technologies.</p>
 
     <div className={styles.container} id="skills-container">
     <div className={styles.box} id='box1'><img src="node-js.png" alt="" /></div>
