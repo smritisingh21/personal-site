@@ -1,73 +1,44 @@
-// import React from 'react'
-// import './Projects.css'
-// import './Projectcard.css'
-// import { Link } from 'react-router-dom';
-// import { useGSAP } from '@gsap/react';
+import React from "react";
+import { FaChevronCircleRight , FaEnvelope} from "react-icons/fa";
 
 
-// export default function Projectcard({ title, description, link1, link2 }) {
-//   return (
-//     <>
-//         <div className="card">
-//           <h3>{title}</h3>
-//           <div>
-//           <Link to={link1}><button>Live Demo <img src="./public/Link.svg" /></button></Link>
-//           <Link to={link2}><button>Repository <img src="" /></button></Link>
-//           </div>
-          
-//         </div>
-
-//         <div className="description">
-//           <p>{description}</p>
-//           <p>Technologies used: React, Node.js, Express, MongoDB</p>
-
-//         </div>
-//         </>
-//       )
-// }
-
-
-import React, { useState } from 'react';
-import './Projectcard.css';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-
-const Projectcard = ({ number, title, description, link1, link2 }) => {
-  const [showDescription, setShowDescription] = useState(false);
-
+const Projectcard = ({ project, onOpen, index }) => {
   return (
-    <div className="project-card">
-      <div className="project-number">{number}</div>
-      <div className="project-content">
-        <div className="project-header">
-          <h3 className="project-title">{title}&nbsp;&nbsp;
-            <button
-            onClick={() => setShowDescription(!showDescription)}
-            className="dropdown-toggle"
-            aria-label="Toggle description"
-          >
-            {showDescription ? <FaChevronUp /> : <FaChevronDown />}
-          </button>
-          </h3>
-           
-            <div className="project-links">
-          <a href={link1} target="_blank" rel="noopener noreferrer" className="btn">
-            Live 🔗
-          </a>
-          <a href={link2} target="_blank" rel="noopener noreferrer" className="btn">
-            Github
-          </a>
+    <div 
+      className="group relative flex flex-col p-8 rounded-[2.5rem] bg-white/[0.02] backdrop-blur-xl border border-white/5 hover:border-emerald-500/20 transition-all duration-500 animate-in fade-in slide-in-from-bottom-12 fill-mode-both"
+      style={{ animationDelay: `${index * 150}ms` }}
+    >
+      <div className="flex justify-between items-start mb-10">
+        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+          <FaEnvelope size={24} />
         </div>
-        </div>
+        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-stone-500">{project.cat}</span>
+      </div>
 
-        {showDescription && (
-          <p className="project-description">{description}</p>
-        )}
-
+      <h3 className="text-3xl font-black text-stone-100 uppercase tracking-tighter mb-4 group-hover:text-emerald-400 transition-colors">
+        {project.title}
+      </h3>
       
+      <p className="text-stone-400 text-sm leading-relaxed mb-10 line-clamp-2">
+        {project.description}
+      </p>
+
+      <div className="mt-auto pt-8 border-t border-white/5 flex items-center justify-between">
+        <div className="flex gap-2">
+          {project.tech.slice(0, 2).map(t => (
+            <span key={t} className="px-3 py-1 bg-stone-900/50 rounded-lg text-[9px] font-bold text-stone-500 border border-white/5 uppercase tracking-widest">{t}</span>
+          ))}
+        </div>
+        
+        <button 
+          onClick={onOpen}
+          className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-emerald-400 hover:text-amber-400 transition-colors"
+        >
+          View Details <FaChevronCircleRight size={14} />
+        </button>
       </div>
     </div>
   );
 };
 
 export default Projectcard;
-

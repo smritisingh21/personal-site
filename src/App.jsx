@@ -1,4 +1,3 @@
-import  './App.css'
 import NavBar from './components/NavBar.jsx'
 import Home from './components/Home.jsx'
 import About from './components/About.jsx'
@@ -17,8 +16,6 @@ function App() {
       <About/>
       <Skills/>
       <Projects/>
-
-      <h1>Find me here</h1>
       <Socials/>
    </div>
    </>
