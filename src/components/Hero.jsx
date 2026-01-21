@@ -42,19 +42,19 @@ const Socials = () => {
 };
 
 // --- MAIN COMPONENT: Home ---
-const Home = () => {
+const Hero = () => {
   return (
     <div id="home-wrapper" className="relative bg-black overflow-x-hidden">
       
       <div className="sticky top-0 h-screen w-50 flex items-center justify-center z-0 overflow-hidden pointer-events-none">
-        <div className="relative w-[95vw] h-[85vh] md:w-[90vw] md:h-[80vh] overflow-hidden rounded-[2.5rem] shadow-[0_0_100px_rgba(0,0,0,0.9)]">
+        <div className="relative w-[60vw] h-[60vh] md:w-[70vw] md:h-[70vh] overflow-hidden rounded-[2.5rem] shadow-[0_0_100px_rgba(0,0,0,0.9)]">
           <video 
             src="planet.mp4" 
             autoPlay 
             loop 
             muted 
             playsInline
-            className="w-full h-full X bg-[#040504]"
+            className="w-full h-full "
           />
           {/* Cinematic Overlays */}
           <div className="absolute inset-0 bg-black/40" />
@@ -115,4 +115,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;

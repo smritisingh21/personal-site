@@ -23,7 +23,7 @@ const Socials = () => {
 
   return (
     <div 
-      id="contact-box" 
+      id="contacts" 
       ref={containerRef}
       className="flex flex-col items-center justify-center py-20 px-6 bg-[#040504] relative overflow-hidden"
     >

@@ -37,7 +37,7 @@ const Skills = () => {
 
   return (
     <section 
-      id="skills-section" 
+      id="#skills-section" 
       ref={sectionRef}
       className="relative min-h-screen py-32 px-6 flex items-center justify-center bg-[#040504] overflow-hidden"
     >
@@ -102,7 +102,7 @@ const Skills = () => {
               {/* </div> */}
 
               {/* The "Small Tag" Name Badge */}
-              
+
               <div className="mt-4 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
                 <span className="
                   px-2.5 py-1
