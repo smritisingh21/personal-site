@@ -4,16 +4,19 @@ import About from './components/About.jsx'
 import Projects from './components/Projects.jsx'
 import Socials from './components/Socials.jsx'
 import Skills from './components/Skills.jsx'
-import AppLayout from './components/AppLayout.jsx'
+import Experience from './components/Experience.jsx'
+import Education from './components/Education.jsx'
 
 function Home() {
   return (
     <>
             <Hero/>
-            <About/>
+            <Education/>
             <Skills/>
+            <Experience/>
             <Projects/>
             <Socials/>
+
    </>
  
   )

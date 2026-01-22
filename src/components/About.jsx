@@ -37,24 +37,15 @@ const About = () => {
     <section 
       id="about-section" 
       ref={sectionRef}
-      className="relative min-h-screen py-24 px-6 overflow-hidden flex items-center justify-center bg-[#040504] transition-opacity duration-1000"
+      className="relative min-h-screen py-24 px-6 overflow-hidden flex items-center justify-center  transition-opacity duration-1000"
     >
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none overflow-hidden">
-        {/* Cinematic Emerald Glow */}
-        <div className="absolute top-[15%] right-[5%] w-[30rem] h-[30rem] bg-emerald-600/10 blur-[140px] rounded-full" />
-        {/* Warm Amber/Yellowish Planetary Glow */}
-        <div className="absolute bottom-[10%] left-[5%] w-[25rem] h-[25rem] bg-amber-500/5 blur-[120px] rounded-full" />
-      </div>
-
+ 
       <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
-        {/* Left Side: Astronaut Visualization */}
         <div className={`order-2 lg:order-1 flex justify-center lg:justify-start transition-all duration-1000 transform ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
           <div className="relative max-w-sm md:max-w-md pointer-events-none group">
-            {/* Deep Emerald Aura */}
             <div className="absolute inset-0 bg-emerald-500/10 blur-[80px] rounded-full animate-pulse" />
             
-            {/* Native CSS Floating Animation Wrapper */}
             <div className="animate-[bounce_5s_infinite] transition-transform duration-700 hover:rotate-6">
               <img 
                 src="./astronaut.png" 

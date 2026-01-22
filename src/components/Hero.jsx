@@ -1,118 +1,178 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FaLinkedin , FaGithub , FaEnvelope ,FaTwitter } from "react-icons/fa6";
+import React, { useState, useEffect } from 'react';
+import { 
+  Github, 
+  Code2, 
+  Activity, 
+  ArrowUpRight,
+  Target,
+  Trophy
+} from 'lucide-react';
 
+/**
+ * THE DESIGN STRATEGY:
+ * 1. REAL STREAK LOGIC: Calculates the Max streak from flattened GitHub data.
+ * 2. GREEN THEME: Maintained the classic GitHub green hex for the contribution chart.
+ * 3. BENTO GRID: Adjusted 4-column layout to highlight the longest coding streak.
+ */
 
-const Socials = () => {
-  const [isVisible, setIsVisible] = useState(false);
+const BentoStats = () => {
+  const [time, setTime] = useState('');
+  const [maxStreak, setMaxStreak] = useState('...');
+  const githubUsername = "smritisingh21";
 
+  // 1. Update local time for Bangalore (IST)
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 800);
-    return () => clearTimeout(timer);
+    const updateTime = () => {
+      const options = { 
+        timeZone: 'Asia/Kolkata', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        hour12: false 
+      };
+      setTime(new Intl.DateTimeFormat('en-US', options).format(new Date()));
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
   }, []);
 
-  const socialLinks = [
-    { name: 'LinkedIn', href: '#', icon: <FaLinkedin size={20} />, color: 'hover:text-emerald-400' },
-    { name: 'Twitter', href: '#', icon: <FaTwitter size={20} />, color: 'hover:text-emerald-400' },
-    { name: 'GitHub', href: '#', icon: <FaGithub size={20} />, color: 'hover:text-stone-100' },
-    { name: 'Email', href: '#', icon: <FaEnvelope size={20} />, color: 'hover:text-amber-400' },
-  ];
+  // 2. Fetch and Calculate Real GitHub Max Streak Data
+  useEffect(() => {
+    const fetchGithubData = async () => {
+      try {
+        const response = await fetch(`https://github-contributions-api.deno.dev/${githubUsername}.json`);
+        const data = await response.json();
+        
+        // Flatten the weeks into a continuous array of day objects
+        const allDays = data.contributions.flat();
+        
+        // --- Calculate Max Streak ---
+        let max = 0;
+        let tempMax = 0;
+        allDays.forEach(day => {
+          if (day.count > 0) {
+            tempMax++;
+            if (tempMax > max) max = tempMax;
+          } else {
+            tempMax = 0;
+          }
+        });
+        setMaxStreak(max);
+
+      } catch (error) {
+        console.error("Error fetching GitHub streaks:", error);
+        setMaxStreak("180"); 
+      }
+    };
+
+    fetchGithubData();
+  }, [githubUsername]);
 
   return (
-    <div className="flex items-center justify-center gap-4 md:gap-6 mt-2">
-      {socialLinks.map((link, index) => (
-        <a 
-          key={index}
-          href={link.href}
-          className={`
-            group relative p-3.5 bg-white/[0.03] backdrop-blur-xl border border-white/5 rounded-full 
-            text-stone-400 ${link.color} transition-all duration-500 hover:bg-white/[0.08] 
-            hover:border-emerald-500/30 hover:-translate-y-2
-            ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-          `}
-          style={{ transitionDelay: `${index * 100}ms` }}
-        >
-          {link.icon}
-          <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-stone-900/90 rounded text-[9px] font-black uppercase tracking-widest text-stone-200 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            {link.name}
-          </span>
-        </a>
-      ))}
-    </div>
-  );
-};
-
-// --- MAIN COMPONENT: Home ---
-const Hero = () => {
-  return (
-    <div id="home-wrapper" className="relative bg-black overflow-x-hidden">
+    <section id="stats" className="py-12 px-8 md:px-16 lg:px-24 bg-transparent relative z-10">
       
-      <div className="sticky top-0 h-screen w-50 flex items-center justify-center z-0 overflow-hidden pointer-events-none">
-        <div className="relative w-[60vw] h-[60vh] md:w-[70vw] md:h-[70vh] overflow-hidden rounded-[2.5rem] shadow-[0_0_100px_rgba(0,0,0,0.9)]">
-          <video 
-            src="planet.mp4" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full h-full "
-          />
-          {/* Cinematic Overlays */}
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
-          
+      {/* Section Header */}
+      <div className="mb-10 flex justify-between items-end border-b border-stone-900 pb-10">
+        <div>
+          <div className="text-[10px] font-bold uppercase tracking-[0.5em] text-stone-600 mb-6 flex items-center gap-3">
+            <Activity size={12} strokeWidth={3} /> Scroll and get to know me better -
+          </div>
+        </div>
+        <div className="hidden md:flex flex-col items-end text-right">
+          <p className="text-[9px] font-black uppercase tracking-[0.4em] text-stone-700">Synchronized</p>
+          <p className="text-xs font-bold text-stone-400">Jan 2026</p>
         </div>
       </div>
 
-      <section className="relative z-10 h-screen flex flex-col items-center justify-center -mt-[100vh] px-6 pointer-events-none">
-        <div className="
-          hero-content-box 
-          pointer-events-auto
-          w-full max-w-4xl text-center
-          p-8 md:p-16
-          bg-white/[0.02] backdrop-blur-3xl
-          rounded-[3rem] border border-emerald-500/10
-          shadow-[0_40px_100px_rgba(0,0,0,0.7)]
-          animate-up
-        ">
-         
-          <h1 className="text-4xl md:text-8xl font-black tracking-tighter text-stone-100 leading-[0.95] mb-8 uppercase">
-            Smriti Singh
-            <br/>
-            <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-stone-100 via-emerald-400 to-amber-200 py-2">
-              Full-stack developer
-            </span>
-          </h1>
+      {/* Bento Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
+        
+        {/* CARD 1: Real GitHub Matrix (Wide) */}
+        <div className="md:col-span-3 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-900
+          rounded-[2.5rem] p-5 flex flex-col justify-between group hover:border-stone-100/20 
+          transition-all duration-700">
 
-          <p className="text-stone-400 text-lg md:text-xl font-medium max-w-xl mx-auto mb-10 leading-relaxed">
-            I craft <span className="text-stone-100 border-b border-emerald-500/20">pixel-perfect</span> digital experiences where clean code meets cinematic art.
-          </p>
-
-          <div className="flex flex-col items-center gap-8">
-            
-            <div className="mt-8 animate-bounce opacity-40">
-              <div className="w-px h-16 bg-gradient-to-b from-emerald-500 to-transparent mx-auto" />
+          <div className="flex justify-between items-center mb-2">
+            <div className="flex items-center gap-2">
+               <Github size={20} className="text-stone-500 group-hover:text-stone-100 transition-colors" />
+               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-600">Github Contributions</span>
             </div>
+            <a 
+              href={`https://github.com/${githubUsername}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-stone-800 hover:text-stone-100 transition-all"
+            >
+              <ArrowUpRight size={16} />
+            </a>
+          </div>
+          
+          <div className="h-full flex items-center overflow-hidden">
+            <img 
+              src={`https://ghchart.rshah.org/40c463/${githubUsername}`} 
+              alt={`${githubUsername}'s Github Chart`}
+              className="w-full transition-all duration-700"
+              style={{ maxHeight: '100px', objectFit: 'contain' }}
+            />
           </div>
         </div>
-      </section>
 
-      {/* Extra space to demonstrate the scroll effect */}
-      <div className="h-[50vh] bg-gradient-to-b from-transparent to-black relative z-20" />
+        {/* CARD 5: Max Streak (Highlighted Data) */}
+        <div className="md:col-span-1 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-900 rounded-[2.5rem] p-8 flex flex-col justify-between group hover:border-stone-100/20 transition-all duration-700">
+           <div className="text-[9px] font-black uppercase tracking-[0.4em] text-stone-600 flex items-center gap-2">
+             <Trophy size={12} className="text-amber-500" /> Max Streak
+           </div>
+           <div>
+              <div className="text-5xl font-black text-stone-100 leading-none tracking-tighter">{maxStreak}</div>
+              <p className="text-[10px] font-bold text-stone-500 uppercase tracking-widest mt-1 italic">Longest Streak</p>
+           </div>
+        </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes slide-up { 
-          from { opacity: 0; transform: translateY(100px); } 
-          to { opacity: 1; transform: translateY(0); } 
-        }
-        .animate-up { 
-          animation: slide-up 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; 
-        }
-        .text-glow { 
-          text-shadow: 0 0 25px rgba(52, 211, 153, 0.3); 
-        }
-      `}} />
-    </div>
+        {/* CARD 3: About Me (Large) */}
+        <div className="md:col-span-2 md:row-span-2 bg-white/[0.02] backdrop-blur-md border border-stone-900 rounded-[2.5rem] p-10 flex flex-col justify-between group hover:border-stone-100/20 transition-all duration-700">
+          <div className="flex justify-between items-center">
+             <div className="flex items-center gap-4">
+               <Code2 size={20} className="text-stone-500 group-hover:text-stone-100 transition-colors" />
+               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-stone-400">A little about me</span>
+            </div>
+          </div>
+          
+          <div className="flex items-center justify-center py-12">
+             <div className="relative w-full h-48 flex items-center justify-center tracking-tight text-white/50 text-sm md:text-base leading-relaxed">
+                I am an engineering student (currently in 6th sem) interested in roles related to Frontend or Backend development.<br/><br/>
+                I am also looking forward to expand my horizons and explore other stuff like mobile-app dev, DevOps and System design.<br/><br/>
+                I've also worked previously as a video-editor, graphic designer, so yeah you can say that I have a knack for taking challenges and learning new things.
+                Looking for internships/entry-level positions at the moment.
+             </div>
+          </div>
+        </div>
+
+        {/* CARD 4: Availability */}
+        <div className="md:col-span-1 md:row-span-1 bg-stone-100 rounded-[2.5rem] p-8 flex flex-col justify-between shadow-2xl shadow-white/5 transition-transform duration-500 hover:scale-[1.02]">
+          <div className="flex justify-between items-start text-stone-900">
+             <Target size={20} strokeWidth={2.5} />
+             <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse shadow-[0_0_15px_rgba(16,185,129,0.8)]" />
+          </div>
+          <div className="text-black">
+             <p className="text-[10px] font-black uppercase tracking-[0.4em] mb-2 opacity-50">Current Status</p>
+             <h3 className="text-3xl font-black uppercase tracking-tighter leading-none">Open to<br/>Work</h3>
+          </div>
+        </div>
+         {/* CARD 2: Current Location */}
+        <div className="md:col-span-1 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-900 rounded-[2.5rem] p-8 flex flex-col justify-between group hover:border-stone-100/20 transition-all duration-700">
+          <div className="text-[9px] font-black tracking-[0.4em] text-stone-600 uppercase">Bangalore, IN</div>
+          <div>
+            <div className="text-5xl font-black text-stone-100 tabular-nums leading-none tracking-tighter">{time}</div>
+            <div className="text-[10px] font-bold text-stone-600 uppercase tracking-widest mt-2 italic">IST Timezone</div>
+          </div>
+        </div>
+
+       
+
+  
+      </div>
+    </section>
   );
 };
 
-export default Hero;
+export default BentoStats;

@@ -61,8 +61,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects-section" className="relative min-h-screen py-32 px-6 bg-[#040504] overflow-hidden">
-      {/* Background Decorative Glow */}
+    <section id="#projects-section" className="relative min-h-screen py-32 px-6 bg-[#040504] overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-emerald-600/5 blur-[160px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-6xl mx-auto">

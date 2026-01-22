@@ -8,7 +8,8 @@ const Sidebar = () => {
 
   const links = [
     { name: 'Home', href: '#' },
-    { name: 'About', href: '#about-section' },
+    { name: 'Education', href: '#education' },
+    { name: 'Experience', href: '#experience' },
     { name: 'Selected Works', href: '#projects-section' },
     { name: 'Contact', href: '#contacts' },
   ];
@@ -38,7 +39,7 @@ const Sidebar = () => {
         fixed top-0 left-0 h-full z-[100] 
         bg-[#0a0a0a] border-r border-stone-900
         transition-all duration-700 ease-in-out
-        w-full md:w-[22vw] lg:w-[18vw] mt-8
+        w-full md:w-[22vw] lg:w-[18vw] 
         flex flex-col justify-start p-10 gap-10
         ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
       `}>
