@@ -15,35 +15,33 @@ const Experience = () => {
       id: '01', 
       role: 'Full stack developer', 
       company: 'Freelance', 
-      year: '2024- present',
-      description: 'Architecting high-performance web applications using the MERN stack and providing tech support. '
+      year: '2025- present',
+      description: 'Architecting high-performance web applications using the MERN stack and providing tech support.Spent a lot of time focusing on web fundamentals and worked on my personal projects.Some gigs are currently under process and will be shared soon.Stay tuned! '
     },
     { 
       id: '02', 
       role: 'Creative head', 
-      company: 'Altalune', 
-      year: 'Oct,2023 - Dec,2023',
-      description: 'Developed brand identities and lead teams for deigns and video-edits. My role also involved facing clients directly and collaborating to understand their needs and deliver results.'
+      company: 'Altalune Atelier ', 
+      year: 'Oct 2023 - Dec 2023',
+      description: 'Altalune Atelier is a creative agency that helped creators to developed brand identities through social media.I lead teams for designs and video-edits. My role also involved facing clients directly and collaborating to understand their needs and deliver results.'
     },
     { 
       id: '03', 
-      role: 'Information Science', 
+      role: 'Freelance video editor', 
       company: 'B.Tech / BLR', 
-      year: '2023 -2027',
-      description: 'Specializing in core CS concepts and data structures at the heart of Bangalore’s tech ecosystem. Actively applying academic principles to real-world full-stack development challenges.'
+      year: 'June 2023 - October 2024',
+      description:'Learned video-editing in AevyTV cohort and edited videos for YT channels while managing college , designed thumbnails for videos, enhanced my understanding of content-creation space.'
     }
   ];
 
   return (
-    <section id="experience" className="py-20 px-8 md:px-16 lg:px-24 bg-black/40">
+    <section id="experience" className="py-20 px-8 md:px-16 lg:px-24 bg-black/30">
       <div className="max-w-5xl mx-auto">
         {/* Compact Header */}
-        <div className="flex items-center gap-4 mb-12 border-b border-stone-900 pb-6">
-          <h2 className="text-2xl font-black  tracking-tighter text-stone-100 italic font-serif "> Work experience</h2>
-        </div>
+          <h2 className="text-2xl font-thin  tracking-tighter text-stone-400 italic font-serif mb-4"> Work experience</h2>
 
         {/* Interactive List */}
-        <div className="flex flex-col border-t border-stone-900">
+        <div className="flex flex-col border-t border-stone-300">
           {experiences.map((exp) => (
             <div 
               key={exp.id} 
@@ -59,7 +57,7 @@ const Experience = () => {
                   <span className="text-[10px] font-bold text-stone-800 group-hover:text-stone-400 transition-colors">
                     {exp.id}
                   </span>
-                  <h3 className={`text-lg md:text-2xl font-black uppercase tracking-tight transition-colors ${
+                  <h3 className={`text-lg md:text-2xl font-semibold tracking-tight transition-colors ${
                     expandedId === exp.id ? 'text-stone-50' : 'text-stone-200 group-hover:text-stone-50'
                   }`}>
                     {exp.role}

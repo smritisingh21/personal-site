@@ -46,7 +46,7 @@ const Education = () => {
     <section 
       id="education" 
       ref={sectionRef}
-      className="relative min-h-screen py-24 px-8 bg-black/30 backdrop:blur-4xl overflow-hidden"
+      className="relative min-h-screen py-10 px-8 bg-black/40 backdrop:blur-4xl overflow-hidden"
     >
       {/* Constrained Container */}
       <div className="relative z-10 max-w-2xl mx-auto">
@@ -81,8 +81,8 @@ const Education = () => {
               >
                 {/* Node Point */}
                 <div className="absolute -left-8 md:-left-12 top-1.5 z-20">
-                   <div className="w-4 h-4 rounded-full bg-[#0a0a0a] border border-stone-800 flex items-center justify-center group hover:border-white transition-all">
-                      <div className="w-1.5 h-1.5 bg-stone-700 group-hover:bg-white transition-all" />
+                   <div className="w-4 h-4 rounded-full bg-stone-200/70 border border-stone-200/70 flex items-center justify-center group hover:border-white transition-all">
+                      <div className="w-1 h-1  group-hover:bg-white transition-all" />
                    </div>
                 </div>
 
@@ -93,7 +93,7 @@ const Education = () => {
                   </div>
 
                   <div className="space-y-3">
-                    <h3 className="text-xl md:text-3xl font-black text-stone-200 uppercase tracking-tighter group-hover:text-white transition-colors">
+                    <h3 className="text-xl md:text-3xl font-medium text-stone-200  tracking-tight group-hover:text-white transition-colors">
                       {node.title}
                     </h3>
                     <p className="flex items-center gap-1.5  text-stone-400 text-sm md:text-base font-medium leading-snug max-w-lg">

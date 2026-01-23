@@ -11,8 +11,8 @@ function Home() {
   return (
     <>
             <Hero/>
-            <Education/>
             <Experience/>
+            <Education/>
             <Skills/>
             <Projects/>
             <Socials/>

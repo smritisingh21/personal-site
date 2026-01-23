@@ -25,7 +25,7 @@ export const socialLinks = [
     },
     { 
       name: 'Email', 
-      href: 'mailto:smriti.singh@example.com', 
+      href:"https://mail.google.com/mail/?view=cm&fs=1&to=smritiiisinghh@gmail.com" ,
       icon: <FaEnvelope size={22} />, 
       color: 'group-hover:text-amber-400',
       glow: 'group-hover:shadow-amber-500/20'

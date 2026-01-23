@@ -22,16 +22,16 @@ const Skills = () => {
   const skillCategories = [
     {
       category: "Frontend",
-      skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "GSAP", "HTML5/CSS3"]
+      skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Shadcn UI","Material UI", "GSAP", "HTML5/CSS3"]
     },
     {
       category: "Backend",
-      skills: ["Node.js", "Express", "MongoDB", "REST APIs", "Mongoose ORM", "Redis"]
+      skills: ["Node.js", "Express", "MongoDB", "REST APIs", "Mongoose ORM", "Redis", "Prisma"]
     },
-    {
-      category: "DevOps",
-      skills: ["Docker", "Git", "Vercel", "CI/CD", "AWS Basics"]
-    },
+    // {
+    //   category: "DevOps",
+    //   skills: ["Render","Git", "Vercel", "CI/CD", "AWS Basics"]
+    // },
     {
       category: "Tools",
       skills: ["Figma", "Postman", "GitHub", "Adobe Suite"]
@@ -42,7 +42,7 @@ const Skills = () => {
     <section 
       id="skills" 
       ref={sectionRef}
-      className="relative min-h-screen py-24 px-8 bg-black/50 overflow-hidden"
+      className="relative min-h-100 py-10 px-8 bg-black/50 overflow-hidden"
     >
       <div className="relative z-10 max-w-2xl mx-auto">
         
@@ -54,7 +54,7 @@ const Skills = () => {
           <h2 className="text-3xl md:text-5xl font-black text-stone-100 tracking-tighter uppercase mb-4 leading-none">
             Technical <span className="text-stone-500 italic font-serif lowercase tracking-normal">Kit </span>
           </h2>
-          <p className="text-[13px] flex justify-center font-bold text-stone-900  bg-white/70">
+          <p className="text-[13px] flex justify-center font-bold text-stone-400 ">
             A serialized overview of tools and frameworks i've used until now.
           </p>
         </div>

@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowRight, FaGlobe } from 'react-icons/fa';
+import { socialLinks } from '../SocialsData';
 const Footer = () => {
   const [time, setTime] = useState('');
+    const links = [
+    { name: 'Home', href: '#' },
+    { name: 'Education', href: '#education' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Selected Works', href: '#projects-section' },
+    { name: 'Contact', href: '#contacts' },
+  ];
 
   useEffect(() => {
     const updateTime = () => {
@@ -30,9 +38,9 @@ const Footer = () => {
         {/* Column 1: Directory */}
         <div className="flex flex-col gap-4">
           <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-600 mb-2">Directory</h4>
-          {['Index', 'Selected Works', 'Vision', 'Archive'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors">
-              {item}
+          {links.map((item) => (
+            <a key={item} href={item.href} className="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors">
+              {item.name}
             </a>
           ))}
         </div>
@@ -40,9 +48,9 @@ const Footer = () => {
         {/* Column 2: Socials */}
         <div className="flex flex-col gap-4">
           <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-600 mb-2">Socials</h4>
-          {['LinkedIn', 'GitHub', 'Twitter', 'Instagram'].map((item) => (
-            <a key={item} href="#" className="text-xs font-bold uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors">
-              {item}
+          {socialLinks.map((item) => (
+            <a key={item.name} href={item.href} target='_blank' className="text-xs cursor-pointer font-bold uppercase tracking-widest text-stone-400 hover:text-stone-100 transition-colors">
+              {item.name}
             </a>
           ))}
         </div>
@@ -79,10 +87,9 @@ const Footer = () => {
         </div>
         <div className="flex gap-8">
            <p className="text-[9px] font-medium text-stone-800 uppercase tracking-[0.5em]">Do not copy this </p>
-           <p className="text-[9px] font-medium text-stone-800 uppercase tracking-[0.5em]">Terms of Service</p>
         </div>
         <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-700 italic">
-          Crafted with code & aesthetic
+          
         </div>
       </div>
 

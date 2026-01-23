@@ -8,22 +8,29 @@ import {
   Trophy,
   Linkedin,
   Twitter,
-  Mail,
-  Instagram
+  Mail
 } from 'lucide-react';
-import { FaXTwitter } from 'react-icons/fa6';
+
+/**
+ * THE DESIGN STRATEGY:
+ * 1. RESPONSIVE FILTERING: On mobile (< 768px), we hide non-essential cards (Streak, Location, Status) 
+ * to focus on the core narrative: Activity, Bio, and Socials.
+ * 2. FLUID GRID: Standard 4-column layout on desktop, switching to a clean columnar flow on mobile.
+ * 3. REAL DATA: Fetches live GitHub max streak data for smritisingh21.
+ * 4. COMPATIBILITY: Uses lucide-react for all icons to ensure stable compilation.
+ */
 
 const BentoStats = () => {
   const [time, setTime] = useState('');
   const [maxStreak, setMaxStreak] = useState('...');
   const githubUsername = "smritisingh21";
 
-  // Mock social links for the "Find me here" block to ensure it works without external files
+  // Mock social links for the "Find me here" block
   const socialLinks = [
     { name: 'Github', href: `https://github.com/${githubUsername}`, icon: <Github size={20} /> },
-    { name: 'LinkedIn',    href: 'https://www.linkedin.com/in/smriti-singh-a06685257/', icon: <Linkedin size={20} /> },
-    { name: 'Twitter',       href: 'https://x.com/sillymilllly',  icon: <FaXTwitter size={20} /> },
-    { name: 'Email', href: 'smritiiisinghh@gmail.com', icon: <Mail size={20} /> },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/smriti-singh-a06685257/', icon: <Linkedin size={20} /> },
+    { name: 'Twitter', href: 'https://x.com/sillymilllly', icon: <Twitter size={20} /> },
+    { name: 'Email', href: 'mailto:smritiiisinghh@gmail.com', icon: <Mail size={20} /> },
   ];
 
   // 1. Update local time for Bangalore (IST)
@@ -73,7 +80,7 @@ const BentoStats = () => {
   }, [githubUsername]);
 
   return (
-    <section id="stats" className="py-12 px-8 md:px-16 lg:px-24 bg-transparent relative z-10">
+    <section id="stats" className="py-12 px-6 md:px-16 lg:px-24 bg-transparent relative z-10">
       
       {/* Section Header */}
       <div className="mb-10 flex justify-between items-end pb-7 border-b border-stone-900/50">
@@ -88,13 +95,13 @@ const BentoStats = () => {
         </div>
       </div>
 
-      {/* Bento Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[180px]">
+      {/* Bento Grid: Standard 4 cols on desktop, 1 col on mobile */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-auto md:auto-rows-[180px]">
         
-        {/* CARD 1: Real GitHub Matrix (Wide) */}
+        {/* CARD 1: Real GitHub Matrix (Visible Mobile + Desktop) */}
         <div className="md:col-span-3 md:row-span-1 bg-white/[0.02] backdrop-blur-sm border border-stone-700
           rounded-[2.5rem] p-5 flex flex-col justify-between group hover:border-stone-100/20 
-          transition-all duration-700">
+          transition-all duration-700 min-h-[180px]">
 
           <div className="flex justify-between items-center mb-2">
             <div className="flex items-center gap-2">
@@ -121,8 +128,8 @@ const BentoStats = () => {
           </div>
         </div>
 
-        {/* CARD 5: Max Streak */}
-        <div className="md:col-span-1 md:row-span-1 bg-white/[0.02] backdrop-blur-sm border border-stone-700 rounded-[2.5rem] p-8 flex flex-col justify-between group
+        {/* CARD 2: Max Streak (Hidden on Mobile) */}
+        <div className="hidden md:flex md:col-span-1 md:row-span-1 bg-white/[0.02] backdrop-blur-sm border border-stone-700 rounded-[2.5rem] p-8 flex-col justify-between group
          hover:border-stone-100/20 transition-all duration-700">
            <div className="text-[9px] font-black uppercase tracking-[0.4em] text-stone-600 flex items-center gap-2">
              <Trophy size={12} className="text-amber-500" /> Max Streak
@@ -133,9 +140,9 @@ const BentoStats = () => {
            </div>
         </div>
 
-        {/* CARD 3: About Me (Large) */}
+        {/* CARD 3: About Me (Visible Mobile + Desktop) */}
         <div className="md:col-span-2 md:row-span-2 bg-white/[0.02] backdrop-blur-sm border border-stone-700 
-        rounded-[2.5rem] p-6 flex flex-col justify-between group hover:border-stone-100/20 transition-all duration-700">
+        rounded-[2.5rem] p-6 flex flex-col justify-between group hover:border-stone-100/20 transition-all duration-700 min-h-[300px] md:min-h-auto">
           <div className="flex justify-between items-center">
              <div className="flex items-center gap-4">
                <Code2 size={20} className="text-stone-500 group-hover:text-stone-100 transition-colors" />
@@ -143,8 +150,8 @@ const BentoStats = () => {
             </div>
           </div>
           
-          <div className="flex items-center justify-center py-12">
-             <div className="relative w-full h-48 flex items-center justify-center tracking-tight text-white/50 text-xs md:text-base leading-tight">
+          <div className="flex items-center justify-center py-6 md:py-12">
+             <div className="relative w-full tracking-tight text-white/50 text-xs md:text-sm leading-relaxed text-center md:text-left">
                 I am an engineering student (currently in 6th sem) interested in roles related to Backend development or software engineering.<br/><br/>
                 I am also looking forward to expand my horizons and explore other stuff like mobile-app dev, DevOps and System design.<br/><br/>
                 I've also worked previously as a video-editor, graphic designer, so yeah you can say that I have a knack for taking challenges and learning new things.
@@ -153,8 +160,8 @@ const BentoStats = () => {
           </div>
         </div>
 
-        {/* CARD 4: Availability */}
-        <div className="md:col-span-1 md:row-span-1 bg-stone-100/90 rounded-[2.5rem] p-8 flex flex-col justify-between shadow-2xl shadow-white/5 transition-transform duration-500 hover:scale-[1.02]">
+        {/* CARD 4: Availability (Hidden on Mobile) */}
+        <div className="hidden md:flex md:col-span-1 md:row-span-1 bg-stone-100/90 rounded-[2.5rem] p-8 flex-col justify-between shadow-2xl shadow-white/5 transition-transform duration-500 hover:scale-[1.02]">
           <div className="flex justify-between items-start text-stone-900 ">
              <Target size={20} strokeWidth={2.5} />
              <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(16,190,129,0.8)]" />
@@ -165,8 +172,8 @@ const BentoStats = () => {
           </div>
         </div>
 
-        {/* CARD 2: Current Location */}
-        <div className="md:col-span-1 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-700 rounded-[2.5rem] p-8 flex flex-col justify-between group hover:border-stone-100/20 transition-all duration-700">
+        {/* CARD 5: Current Location (Hidden on Mobile) */}
+        <div className="hidden md:flex md:col-span-1 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-700 rounded-[2.5rem] p-8 flex-col justify-between group hover:border-stone-100/20 transition-all duration-700">
           <div className="text-[9px] font-black tracking-[0.4em] text-stone-400 uppercase">Bangalore, IN</div>
           <div>
             <div className="text-5xl font-black text-stone-100 tabular-nums leading-none tracking-tighter">{time}</div>
@@ -174,26 +181,25 @@ const BentoStats = () => {
           </div>
         </div>
 
-        {/* CARD 6: Find Me Here (Corrected Block) */}
-        <div className="md:col-span-2 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-700 rounded-[2.5rem] p-8 flex flex-col items-center justify-center group hover:border-stone-100/20 transition-all duration-700">
-           <div className="text-center space-y-4 ">
+        {/* CARD 6: Find Me Here (Visible Mobile + Desktop) */}
+        <div className="md:col-span-2 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-700 rounded-[2.5rem] p-8 flex flex-col items-center justify-center group hover:border-stone-100/20 transition-all duration-700 min-h-[180px]">
+           <div className="text-center space-y-4 w-full">
               <span className="text-[9px] font-black uppercase tracking-[0.4em] text-stone-500">Find me here</span>
-              <div className="flex items-center justify-center gap-8 ">
+              <div className="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
                 {socialLinks.map((s, idx) => (
                     <a 
                       key={idx} 
                       href={s.href} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-stone-300 hover:text-white   transition-all transform hover:scale-110 hover:animate-ping
-                      active:scale-95 border border-white/20 rounded-full p-2"
+                      className="text-stone-300 hover:text-white transition-all transform hover:scale-110 active:scale-95 border border-white/10 rounded-full p-3 bg-white/5 hover:bg-white/10 hover:border-white/30"
                     >
                         {s.icon}
                     </a>
                 ))}
               </div>
-              <p className='text-gray-300 text-xs tracking-tight'>
-                Let us build something together, or maybe just be friends.
+              <p className='text-stone-500 text-[10px] tracking-tight uppercase font-bold opacity-60'>
+                Let's build something extraordinary.
               </p>
            </div>
         </div>

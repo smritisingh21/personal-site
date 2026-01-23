@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import { 
-  ArrowUpRight, 
-  ArrowLeft, 
   Layers, 
-  ExternalLink, 
   Github, 
-  Sparkles, 
-  Globe, 
-  ChevronRight,
-  Zap
 } from 'lucide-react';
 import ProjectCard from './Projectcard'
 import {PROJECTS_DATA} from '../Projectsdata'
@@ -50,7 +43,7 @@ export default function Projects() {
             Selected <span className="text-stone-500 italic font-serif lowercase tracking-normal">works</span>
           </h2>
           <p className="text-stone-500 max-w-xl text-sm md:text-base leading-relaxed font-medium">
-            Merging technical complexity with <span className="text-stone-300 italic">minimalist architecture</span>.
+            Projects that helped me strenthen my <span className="text-stone-300 italic">development fundamentals</span>.
           </p>
         </div>
 
@@ -60,6 +53,7 @@ export default function Projects() {
             <ProjectCard 
               key={project.id} 
               project={project} 
+              tech={project.tech}
               onOpen={() => handleOpenProject(project)} 
             />
           ))}
