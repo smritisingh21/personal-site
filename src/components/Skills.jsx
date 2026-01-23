@@ -42,7 +42,7 @@ const Skills = () => {
     <section 
       id="skills" 
       ref={sectionRef}
-      className="relative min-h-screen py-24 px-8 bg-black/90 overflow-hidden"
+      className="relative min-h-screen py-24 px-8 bg-black/50 overflow-hidden"
     >
       <div className="relative z-10 max-w-2xl mx-auto">
         

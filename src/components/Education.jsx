@@ -18,8 +18,6 @@ const Education = () => {
     };
   }, []);
 
-
-
   const educationData = [
     {
       id: "01",
@@ -48,7 +46,7 @@ const Education = () => {
     <section 
       id="education" 
       ref={sectionRef}
-      className="relative min-h-screen py-24 px-8 bg-transparent overflow-hidden"
+      className="relative min-h-screen py-24 px-8 bg-black/30 backdrop:blur-4xl overflow-hidden"
     >
       {/* Constrained Container */}
       <div className="relative z-10 max-w-2xl mx-auto">
@@ -58,9 +56,9 @@ const Education = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full border border-white/10 mb-4">
             <span className="text-[8px] font-black uppercase tracking-[0.4em] text-stone-500">Academics</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-mono text-yellow-100 font-bold tracking-tight uppercase mb-4 leading-none">
+          {/* <h2 className="text-3xl md:text-5xl font-mono text-yellow-100 font-bold tracking-tight uppercase mb-4 leading-none">
             Educational background  <span className="text-stone-500 italic font-serif lowercase tracking-normal"></span>
-          </h2>
+          </h2> */}
         </div>
 
         {/* The Node Graph (Left Aligned) */}

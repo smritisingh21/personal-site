@@ -35,7 +35,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-8 md:px-16 lg:px-24 bg-black/50">
+    <section id="experience" className="py-20 px-8 md:px-16 lg:px-24 bg-black/40">
       <div className="max-w-5xl mx-auto">
         {/* Compact Header */}
         <div className="flex items-center gap-4 mb-12 border-b border-stone-900 pb-6">

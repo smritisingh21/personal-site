@@ -44,7 +44,7 @@ const Sidebar = () => {
         ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
       `}>
         {/* Top Section: Photo & Brand */}
-        <div className="space-y-2">
+        <div className="space-y-5">
           <div className="group relative w-24 h-24 md:w-32 md:h-32">
 
             <div className="absolute inset-0 bg-stone-500/20 blur-2xl 
@@ -60,13 +60,13 @@ const Sidebar = () => {
             </div>
           </div>
           <div>
-            <h1 className="text-xl font-black tracking-tight text-stone-100 leading-none mb-2">
+            <h1 className="text-xl font-black tracking-tight text-stone-100/80 leading-none mb-2">
               Smriti Singh
             </h1>
             <p className="text-[10px] font-bold text-stone-600 uppercase tracking-wider">
              CS engineer / Developer
             </p>
-            <p className=" flex items-center justify-start gap-1.5 text-[10px] font-bold text-stone-600  tracking-wider mt-2">
+            <p className=" flex items-center justify-start gap-1.5 text-[10px] font-bold text-stone-600  tracking-wider mt-3">
              <FaLocationDot size={12}/> Bengaluru ,India
             </p>
           </div>

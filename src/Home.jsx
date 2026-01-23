@@ -12,8 +12,8 @@ function Home() {
     <>
             <Hero/>
             <Education/>
-            <Skills/>
             <Experience/>
+            <Skills/>
             <Projects/>
             <Socials/>
 

@@ -1,0 +1,15 @@
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;   /* Deep #0a0a0a */
+    --foreground: 0 0% 98%;    /* Stone-100 */
+    --card: 0 0% 3.9%;
+    --popover: 0 0% 3.9%;
+    --primary: 0 0% 98%;       /* High contrast white */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;   /* Stone-900 */
+    --muted: 0 0% 14.9%;
+    --accent: 0 0% 14.9%;
+    --border: 0 0% 14.9%;
+    --radius: 0.75rem;         /* Matching your rounded-[2.5rem] feel */
+  }
+}
