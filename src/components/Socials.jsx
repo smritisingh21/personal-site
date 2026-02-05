@@ -35,41 +35,7 @@ const Socials = () => {
     return () => { if (containerRef.current) observer.unobserve(containerRef.current); };
   }, []);
 
-  // Mock social links (matches your previous style)
-  const socialLinks = [
-    { 
-      name: 'LinkedIn', 
-      href: 'https://www.linkedin.com/in/smriti-singh-a06685257/', 
-      icon: <Linkedin size={22} />, 
-      color: 'group-hover:text-blue-400',
-      glow: 'group-hover:shadow-blue-500/20'
-    },
-    { 
-      name: 'Twitter', 
-      href: 'https://x.com/sillymilllly', 
-      icon: <Twitter size={22} />, 
-      color: 'group-hover:text-emerald-400',
-      glow: 'group-hover:shadow-emerald-500/20'
-    },
-    { 
-      name: 'GitHub', 
-      href: 'https://github.com/smritisingh21', 
-      icon: <Github size={22} />, 
-      color: 'group-hover:text-stone-100',
-      glow: 'group-hover:shadow-white/10'
-    },
-    { 
-      name: 'Email', 
-      href:"https://mail.google.com/mail/?view=cm&fs=1&to=smritiiisinghh@gmail.com" ,
-      icon: <Mail size={22} />, 
-      color: 'group-hover:text-amber-400',
-      glow: 'group-hover:shadow-amber-500/20'
-    },
-   
-  ];
-  <a target="_blank">
-  Email Us
-</a>   
+
 
   // Handle form submission via Formspree (or similar)
   const handleSubmit = async (e) => {
@@ -167,42 +133,7 @@ const Socials = () => {
       </div>
 
       {/* The Social Dock (The Original Logic Integrated) */}
-      <div className="flex items-center justify-center flex-wrap gap-4 md:gap-6">
-        {socialLinks.map((link, index) => (
-          <a 
-            key={index}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(30px) scale(0.9)',
-              transition: `all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 100}ms`
-            }}
-          >
-            <div className={`absolute inset-0 bg-emerald-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
-            <div className={`
-              relative z-10 p-5 md:p-6
-              bg-white/[0.03] backdrop-blur-2xl 
-              border border-white/5 rounded-full 
-              text-stone-400 ${link.color}
-              transition-all duration-500 
-              group-hover:bg-white/[0.08] 
-              group-hover:border-emerald-500/30 
-              group-hover:-translate-y-3
-              shadow-[0_10px_30px_rgba(0,0,0,0.4)]
-              ${link.glow}
-            `}>
-              {link.icon}
-            </div>
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-2.5 py-1 bg-stone-900/60 backdrop-blur-md border border-white/5 rounded-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-              <span className="text-[9px] font-black uppercase tracking-[0.2em] text-stone-200 whitespace-nowrap">{link.name}</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
+     
       <style dangerouslySetInnerHTML={{ __html: `
         .text-glow { text-shadow: 0 0 15px rgba(52, 211, 153, 0.4); }
       `}} />

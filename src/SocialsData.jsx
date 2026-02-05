@@ -30,4 +30,5 @@ export const socialLinks = [
       color: 'group-hover:text-amber-400',
       glow: 'group-hover:shadow-amber-500/20'
     },
+   
   ];

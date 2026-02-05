@@ -5,7 +5,6 @@ const Footer = () => {
   const [time, setTime] = useState('');
     const links = [
     { name: 'Home', href: '#' },
-    { name: 'Education', href: '#education' },
     { name: 'Experience', href: '#experience' },
     { name: 'Selected Works', href: '#projects-section' },
     { name: 'Contact', href: '#contacts' },

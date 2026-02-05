@@ -10,6 +10,7 @@ import {
   Twitter,
   Mail
 } from 'lucide-react';
+import { FaGraduationCap } from 'react-icons/fa';
 
 /**
  * THE DESIGN STRATEGY:
@@ -30,7 +31,14 @@ const BentoStats = () => {
     { name: 'Github', href: `https://github.com/${githubUsername}`, icon: <Github size={20} /> },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/smriti-singh-a06685257/', icon: <Linkedin size={20} /> },
     { name: 'Twitter', href: 'https://x.com/sillymilllly', icon: <Twitter size={20} /> },
-    { name: 'Email', href: 'mailto:smritiiisinghh@gmail.com', icon: <Mail size={20} /> },
+    { 
+         name: 'Email', 
+         href:"https://mail.google.com/mail/?view=cm&fs=1&to=smritiiisinghh@gmail.com" ,
+         icon: <Mail size={20} />, 
+         color: 'group-hover:text-amber-400',
+         glow: 'group-hover:shadow-amber-500/20'
+       },
+      
   ];
 
   // 1. Update local time for Bangalore (IST)
@@ -144,18 +152,18 @@ const BentoStats = () => {
         <div className="md:col-span-2 md:row-span-2 bg-white/[0.02] backdrop-blur-sm border border-stone-700 
         rounded-[2.5rem] p-6 flex flex-col justify-between group hover:border-stone-100/20 transition-all duration-700 min-h-[300px] md:min-h-auto">
           <div className="flex justify-between items-center">
-             <div className="flex items-center gap-4">
+             <div className="flex items-center  justify-center gap-4">
                <Code2 size={20} className="text-stone-500 group-hover:text-stone-100 transition-colors" />
-               <span className="text-[8px] font-black uppercase tracking-[0.4em] text-stone-400 mb-2">A little about me</span>
+               <span className="text-[10px] font-black uppercase  text-stone-400 mb-2">A little about me</span>
             </div>
           </div>
           
           <div className="flex items-center justify-center py-6 md:py-12">
              <div className="relative w-full tracking-tight text-white/50 text-xs md:text-sm leading-relaxed text-center md:text-left">
-                I am an engineering student (currently in 6th sem) interested in roles related to Backend development or software engineering.<br/><br/>
+                I am an engineering student (currently in 6th sem) interested in <b>BACKEND DEVELOPMENT or SOFTWARE ENGINEERING</b> related roles.<br/><br/>
                 I am also looking forward to expand my horizons and explore other stuff like mobile-app dev, DevOps and System design.<br/><br/>
                 I've also worked previously as a video-editor, graphic designer, so yeah you can say that I have a knack for taking challenges and learning new things.
-                Looking for internships/entry-level positions at the moment.
+                Looking for <b>INTERNSHIPS / ENTRY-LEVEL</b> positions at the moment.
              </div>
           </div>
         </div>
@@ -174,11 +182,14 @@ const BentoStats = () => {
 
         {/* CARD 5: Current Location (Hidden on Mobile) */}
         <div className="hidden md:flex md:col-span-1 md:row-span-1 bg-white/[0.02] backdrop-blur-3xl border border-stone-700 rounded-[2.5rem] p-8 flex-col justify-between group hover:border-stone-100/20 transition-all duration-700">
-          <div className="text-[9px] font-black tracking-[0.4em] text-stone-400 uppercase">Bangalore, IN</div>
-          <div>
-            <div className="text-5xl font-black text-stone-100 tabular-nums leading-none tracking-tighter">{time}</div>
-            <div className="text-[10px] font-bold text-stone-600 uppercase tracking-widest mt-2 italic">IST Timezone</div>
+          <FaGraduationCap fill='black' size={20}/> 
+          <div className=" flex gap-2 text-[14px] font-semibold  text-stone-300 ">
+            Bachelor of Technology,
           </div>
+          <div className="text-[12px] font-semibold  text-stone-300   mb-2">
+            Information Science Engineering
+            </div>
+          <div className="text-xs font-black text-stone-400  mb-2 ">Jain University, Bengaluru</div>
         </div>
 
         {/* CARD 6: Find Me Here (Visible Mobile + Desktop) */}
