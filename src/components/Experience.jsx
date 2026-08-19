@@ -18,23 +18,31 @@ const Experience = () => {
       company: 'Freelance', 
       year: '2025- present',
       description: `Architecting high-performance web applications.Spent a lot of time focusing on web fundamentals and worked on my personal projects. \n
-      \n  Worked with organisations like the Eastern Himalayan Center for Public Policy , providing solutions for their website needs and technical support, including complete design and development of their landing page.`
+      \n  Worked with organisations like the Eastern Himalayan Center for Public Policy and House of Shreengaar ,providing solutions for their website needs and technical support, including complete design and development of their landing page.`
       
     },
     { 
       id: '02', 
-      role: 'Creative head', 
-      company: 'Altalune Atelier ', 
-      year: 'Oct 2023 - Dec 2023',
-      description: 'Altalune Atelier is a social media agency that helped creators to developed brand identities online.I lead teams for designs and video-edits. My role also involved facing clients directly and collaborating to understand their needs and deliver results.'
+      role: 'Freelance Graphic designer', 
+      company: 'Eastern Himalayan Centre for Public Policy ', 
+      year: 'July 2026 - Present',
+      description: 'Designed social media posts, promotional creatives, and visual content for the Eastern Himalayan Centre for Public Policy (EHCPP), maintaining a consistent visual identity while communicating research, events, initiatives, and organizational updates effectively across digital platforms.'
     },
-    { 
+       { 
       id: '03', 
       role: 'Video editor', 
       company: 'Freelance', 
       year: 'June 2023 - October 2024',
       description:'Learned video-editing in AevyTV cohort and edited videos for YT channels while managing college , designed thumbnails for videos, enhanced my understanding of content-creation space.'
-    }
+    },
+    { 
+      id: '04', 
+      role: 'Creative head', 
+      company: 'Altalune Atelier ', 
+      year: 'Oct 2023 - Dec 2023',
+      description: 'Altalune Atelier is a social media agency that helped creators to developed brand identities online.I lead teams for designs and video-edits. My role also involved facing clients directly and collaborating to understand their needs and deliver results.'
+    },
+ 
   ];
 
   return (
