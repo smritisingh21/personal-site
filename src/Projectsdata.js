@@ -11,20 +11,7 @@ export const PROJECTS_DATA = [
     github: "https://github.com/smritisingh21/Fin-Track",
     color: "emerald"
   },
-
-  {
-    id: 2,
-    title: "SyncDrive",
-    img: "SyncDrive.png",
-    cat: "Stores your files and folders",
-    longDescription:
-      "A cloud-based file management application built with the MERN stack that allows users to securely upload, organize, preview, and manage files and folders. Implements authentication, file handling with Multer, and scalable cloud storage integration while providing an intuitive folder-based interface.",
-    tech: ["React", "Hooks", "Expressjs", "NodeJS", "Multer", "JWT", "MongoDB Atlas"],
-    github: "https://github.com/smritisingh21/file-storage-app",
-    color: "cyan"
-  },
-
-  {
+{
     id: 3,
     title: "MemoDeck - for all your notes",
     img: "memodeck.png",
@@ -37,6 +24,20 @@ export const PROJECTS_DATA = [
     color: "amber"
   },
 
+ 
+ {
+  id: 6,
+  title: "House of Shreengaar",
+  img: "house-of-shreengaar.png",
+  cat: "E-Commerce",
+  longDescription:
+    "A production e-commerce platform developed for House of Shreengaar using Shopify's commerce infrastructure and a heavily customized storefront. Implemented custom Shopify Liquid sections, responsive hero experiences, promotional banners, product presentation, navigation, and brand-specific UI components while integrating Shopify's native product, cart, checkout, and inventory management capabilities.",
+  tech: ["Shopify", "Liquid", "HTML", "CSS",],
+  live: "https://houseofshreengaar.com/",
+  // github: "",
+  color: "rose"
+},
+  
   {
     id: 4,
     title: "EHCPP official website",
@@ -48,6 +49,17 @@ export const PROJECTS_DATA = [
     live: "https://www.ehcpp.co.in/",
     github: "https://github.com/smritisingh21/EHCPP-landing-page",
     color: "amber"
+  },
+   {
+    id: 2,
+    title: "SyncDrive",
+    img: "SyncDrive.png",
+    cat: "Stores your files and folders",
+    longDescription:
+      "A cloud-based file management application built with the MERN stack that allows users to securely upload, organize, preview, and manage files and folders. Implements authentication, file handling with Multer, and scalable cloud storage integration while providing an intuitive folder-based interface.",
+    tech: ["React", "Hooks", "Expressjs", "NodeJS", "Multer", "JWT", "MongoDB Atlas"],
+    github: "https://github.com/smritisingh21/file-storage-app",
+    color: "cyan"
   },
 
   {
@@ -61,5 +73,6 @@ export const PROJECTS_DATA = [
     // live: "https://www.ehcpp.co.in/",
     github: "https://github.com/smritisingh21/pdf-prep",
     color: "amber"
-  }
+  },
+ 
 ];
